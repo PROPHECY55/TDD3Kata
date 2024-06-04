@@ -25,8 +25,14 @@ describe("Gilded Rose", function() {
   });
 
   it("should never alter the quality or sell_in of Sulfuras", function() {
-
+    items = [ new Item("Sulfuras, Hand of Ragnaros", 10, 80) ];
+    update_quality();
     expect(items[0].sell_in).toEqual(10);
     expect(items[0].quality).toEqual(80);
+  });
+
+  it("should increase quality of Backstage passes by 2 when there are 10 days or less", function() {
+
+    expect(items[0].quality).toEqual(22);
   });
 });
