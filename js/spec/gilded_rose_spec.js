@@ -19,7 +19,14 @@ describe("Gilded Rose", function() {
   });
 
   it("should not increase the quality of any item above 50", function() {
-
+    items = [ new Item("Aged Brie", 10, 50) ];
+    update_quality();
     expect(items[0].quality).toEqual(50);
+  });
+
+  it("should never alter the quality or sell_in of Sulfuras", function() {
+
+    expect(items[0].sell_in).toEqual(10);
+    expect(items[0].quality).toEqual(80);
   });
 });
