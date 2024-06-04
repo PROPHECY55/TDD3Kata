@@ -50,7 +50,8 @@ describe("Gilded Rose", function() {
   });
 
   it("should degrade quality twice as fast after the sell by date", function() {
-
+    items = [ new Item("normal item", 0, 10) ];
+    update_quality();
     expect(items[0].quality).toEqual(8);
   });
 });
